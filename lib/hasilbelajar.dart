@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:mysmk/detailhasilbelajar.dart';
 
 class HasilBelajar extends StatefulWidget {
   @override
@@ -17,7 +18,7 @@ class _HasilBelajarState extends State<HasilBelajar> {
   {'name': 'Figma', 'nilai': 95, 'tugas': 88, 'uts': 85, 'harian': 79, 'pts': 90},
   {'name': 'Fullstack \nDevelopment', 'nilai': 83.9, 'tugas': 80, 'uts': 85, 'harian': 79, 'pts': 90.0},
   {'name': 'Bahasa Indonesia', 'nilai': 88, 'tugas': 90, 'uts': 100, 'harian': 81.0, 'pts': 100},
-  {'name': 'Pendidikan Kewarganegaraan', 'nilai': 85.0, 'tugas': 82, 'uts': 78.0, 'harian': 84, 'pts': 88.0},
+  {'name': 'Pendidikan \nKewarganegaraan', 'nilai': 85.0, 'tugas': 82, 'uts': 78.0, 'harian': 84, 'pts': 88.0},
   {'name': 'Aqidah', 'nilai': 90, 'tugas': 85, 'uts': 92.0, 'harian': 89, 'pts': 95},
   {'name': 'Tahfiz', 'nilai': 82.0, 'tugas': 80, 'uts': 79.0, 'harian': 81, 'pts': 85.0},
   {'name': 'Penjas', 'nilai': 88, 'tugas': 90.0, 'uts': 85, 'harian': 82.0, 'pts': 90},
@@ -175,22 +176,32 @@ class _HasilBelajarState extends State<HasilBelajar> {
                                         ),
                                       ],
                                     ),
-                                    Container(
-                                      padding: EdgeInsets.symmetric(
-                                          vertical: 6.0, horizontal: 16.0),
-                                      decoration: BoxDecoration(
-                                        color: Colors.green,
-                                        borderRadius: BorderRadius.circular(2),
-                                      ),
-                                      child: Text(
-                                        'Detail',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
+                                   // Ubah bagian ini pada _HasilBelajarState
+Container(
+  padding: EdgeInsets.symmetric(vertical: 6.0, horizontal: 16.0),
+  decoration: BoxDecoration(
+    color: Colors.green,
+    borderRadius: BorderRadius.circular(2),
+  ),
+  child: GestureDetector(
+    onTap: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => HasilBelajarMatematika(), // Ganti dengan parameter jika perlu
+        ),
+      );
+    },
+    child: Text(
+      'Detail',
+      style: TextStyle(
+        color: Colors.white,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+  ),
+),
+                                  ]
                                 ),
                                 SizedBox(height: 24),
 
@@ -208,7 +219,9 @@ class _HasilBelajarState extends State<HasilBelajar> {
                                       style: TextStyle(
                                         fontSize: 130,
                                         fontWeight: FontWeight.bold,
-                                        fontStyle: FontStyle.italic,
+                                        fontFamily: 'Rage',
+                                        fontStyle: FontStyle.italic
+                                        
                                       ),
                                     ),
                                   ),
