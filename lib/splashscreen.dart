@@ -59,7 +59,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
             AnimatedTextKit(
               animatedTexts: [
                 TyperAnimatedText(
-                  'MySmk',
+                  'MYSMK',
                   textStyle: TextStyle(
                     color: Colors.white,
                     fontSize: 24,

@@ -14,15 +14,78 @@ class _HasilBelajarState extends State<HasilBelajar> {
   String searchQuery = '';
   List<String> searchHistory = [];
   List<Map<String, dynamic>> mapelList = [
-  {'name': 'Matematika', 'nilai': 80.3, 'tugas': 80.7, 'uts': 85.1, 'harian': 79.0, 'pts': 90.0},
-  {'name': 'Figma', 'nilai': 95, 'tugas': 88, 'uts': 85, 'harian': 79, 'pts': 90},
-  {'name': 'Fullstack \nDevelopment', 'nilai': 83.9, 'tugas': 80, 'uts': 85, 'harian': 79, 'pts': 90.0},
-  {'name': 'Bahasa Indonesia', 'nilai': 88, 'tugas': 90, 'uts': 100, 'harian': 81.0, 'pts': 100},
-  {'name': 'Pendidikan \nKewarganegaraan', 'nilai': 85.0, 'tugas': 82, 'uts': 78.0, 'harian': 84, 'pts': 88.0},
-  {'name': 'Aqidah', 'nilai': 90, 'tugas': 85, 'uts': 92.0, 'harian': 89, 'pts': 95},
-  {'name': 'Tahfiz', 'nilai': 82.0, 'tugas': 80, 'uts': 79.0, 'harian': 81, 'pts': 85.0},
-  {'name': 'Penjas', 'nilai': 88, 'tugas': 90.0, 'uts': 85, 'harian': 82.0, 'pts': 90},
-  {'name': 'Hadits', 'nilai': 78.0, 'tugas': 75, 'uts': 80.0, 'harian': 77, 'pts': 85}
+    {
+      'name': 'Matematika',
+      'nilai': 80.3,
+      'tugas': 80.7,
+      'uts': 85.1,
+      'harian': 79.0,
+      'pts': 90.0
+    },
+    {
+      'name': 'Figma',
+      'nilai': 95,
+      'tugas': 88,
+      'uts': 85,
+      'harian': 79,
+      'pts': 90
+    },
+    {
+      'name': 'Fullstack \nDevelopment',
+      'nilai': 83.9,
+      'tugas': 80,
+      'uts': 85,
+      'harian': 79,
+      'pts': 90.0
+    },
+    {
+      'name': 'Bahasa Indonesia',
+      'nilai': 88,
+      'tugas': 90,
+      'uts': 100,
+      'harian': 81.0,
+      'pts': 100
+    },
+    {
+      'name': 'Pendidikan \nKewarganegaraan',
+      'nilai': 85.0,
+      'tugas': 82,
+      'uts': 78.0,
+      'harian': 84,
+      'pts': 88.0
+    },
+    {
+      'name': 'Aqidah',
+      'nilai': 90,
+      'tugas': 85,
+      'uts': 92.0,
+      'harian': 89,
+      'pts': 95
+    },
+    {
+      'name': 'Tahfiz',
+      'nilai': 82.0,
+      'tugas': 80,
+      'uts': 79.0,
+      'harian': 81,
+      'pts': 85.0
+    },
+    {
+      'name': 'Penjas',
+      'nilai': 88,
+      'tugas': 90.0,
+      'uts': 85,
+      'harian': 82.0,
+      'pts': 90
+    },
+    {
+      'name': 'Hadits',
+      'nilai': 78.0,
+      'tugas': 75,
+      'uts': 80.0,
+      'harian': 77,
+      'pts': 85
+    }
   ];
   List<Map<String, dynamic>> filteredMapelList = [];
 
@@ -102,11 +165,8 @@ class _HasilBelajarState extends State<HasilBelajar> {
                         borderRadius: BorderRadius.circular(8),
                       ),
                     ),
-                    items: <String>[
-                      '2022-2023',
-                      '2024-2025',
-                      '2025-2026'
-                    ].map((String value) {
+                    items: <String>['2022-2023', '2024-2025', '2025-2026']
+                        .map((String value) {
                       return DropdownMenuItem<String>(
                         value: value,
                         child: Text(value),
@@ -151,58 +211,60 @@ class _HasilBelajarState extends State<HasilBelajar> {
                               children: [
                                 // Mata Pelajaran dan Detail
                                 Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'JENIS',
-                                          style: TextStyle(
-                                            color: Colors.orange,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 18,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'JENIS',
+                                            style: TextStyle(
+                                              color: Colors.orange,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 18,
+                                            ),
+                                          ),
+                                          Text(
+                                            mapel['name'],
+                                            style: TextStyle(
+                                              color: Colors.green,
+                                              fontSize: 32,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      // Ubah bagian ini pada _HasilBelajarState
+                                      Container(
+                                        padding: EdgeInsets.symmetric(
+                                            vertical: 6.0, horizontal: 16.0),
+                                        decoration: BoxDecoration(
+                                          color: Colors.green,
+                                          borderRadius:
+                                              BorderRadius.circular(2),
+                                        ),
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    HasilBelajarMatematika(), // Ganti dengan parameter jika perlu
+                                              ),
+                                            );
+                                          },
+                                          child: Text(
+                                            'Detail',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                            ),
                                           ),
                                         ),
-                                        Text(
-                                          mapel['name'],
-                                          style: TextStyle(
-                                            color: Colors.green,
-                                            fontSize: 32,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                   // Ubah bagian ini pada _HasilBelajarState
-Container(
-  padding: EdgeInsets.symmetric(vertical: 6.0, horizontal: 16.0),
-  decoration: BoxDecoration(
-    color: Colors.green,
-    borderRadius: BorderRadius.circular(2),
-  ),
-  child: GestureDetector(
-    onTap: () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => HasilBelajarMatematika(), // Ganti dengan parameter jika perlu
-        ),
-      );
-    },
-    child: Text(
-      'Detail',
-      style: TextStyle(
-        color: Colors.white,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
-  ),
-),
-                                  ]
-                                ),
+                                      ),
+                                    ]),
                                 SizedBox(height: 24),
 
                                 // Widened Nilai Rata-Rata with Grey Background
@@ -215,14 +277,13 @@ Container(
                                   ),
                                   child: Center(
                                     child: Text(
-                                      mapel['nilai'].toStringAsFixed(1), // Menampilkan 1 angka di belakang koma
+                                      mapel['nilai'].toStringAsFixed(
+                                          1), // Menampilkan 1 angka di belakang koma
                                       style: TextStyle(
-                                        fontSize: 130,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'Rage',
-                                        fontStyle: FontStyle.italic
-                                        
-                                      ),
+                                          fontSize: 130,
+                                          // fontWeight: FontWeight.bold,
+                                          fontFamily: 'RageItalic',
+                                          fontStyle: FontStyle.italic),
                                     ),
                                   ),
                                 ),
@@ -245,23 +306,23 @@ Container(
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Expanded(
-                                      child: nilaiBox(
-                                          mapel['tugas'], 'Tugas'), // Passing as double
+                                      child: nilaiBox(mapel['tugas'],
+                                          'Tugas'), // Passing as double
                                     ),
                                     SizedBox(width: 8),
                                     Expanded(
-                                      child: nilaiBox(
-                                          mapel['uts'], 'UTS'), // Passing as double
+                                      child: nilaiBox(mapel['uts'],
+                                          'UTS'), // Passing as double
                                     ),
                                     SizedBox(width: 8),
                                     Expanded(
-                                      child: nilaiBox(
-                                          mapel['harian'], 'Harian'), // Passing as double
+                                      child: nilaiBox(mapel['harian'],
+                                          'Harian'), // Passing as double
                                     ),
                                     SizedBox(width: 8),
                                     Expanded(
-                                      child: nilaiBox(
-                                          mapel['pts'], 'PTS'), // Passing as double
+                                      child: nilaiBox(mapel['pts'],
+                                          'PTS'), // Passing as double
                                     ),
                                   ],
                                 ),
@@ -277,10 +338,9 @@ Container(
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            
                             SizedBox(height: 16),
                             Text(
-                              'Data tidak ditemukan',
+                              'Modul tidak ditemukan',
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
