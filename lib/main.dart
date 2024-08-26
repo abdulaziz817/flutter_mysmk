@@ -16,8 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        fontFamily: 'Rage'
-
+        
       ),
       initialRoute: '/hasilbelajar',
       routes: {

@@ -9,75 +9,6 @@ class HasilBelajarMatematika extends StatefulWidget {
 }
 
 class _HasilBelajarMatematikaState extends State<HasilBelajarMatematika> {
-  final List<Map<String, dynamic>> _data = [
-    {
-      'name': 'Harian',
-      'nilai': 88,
-      'mulai': '07:00',
-      'selesai': '08:00',
-      'submit': '08:30',
-      'progres': '08:55',
-      'catatan': [
-        'Untuk tugas harian ini, perlu perhatian khusus pada detail proses pengerjaan. Perhatikan cara penyelesaian setiap soal dengan seksama.',
-      ]
-    },
-    {
-      'name': 'Tugas',
-      'nilai': 85.0,
-      'mulai': '08:00',
-      'selesai': '09:00',
-      'submit': '09:30',
-      'progres': '09:55',
-      'catatan': [
-        'Tugas ini memerlukan riset tambahan untuk menyelesaikan beberapa bagian yang lebih kompleks. Pastikan semua referensi digunakan dengan benar.',
-      ]
-    },
-    {
-      'name': 'PTS',
-      'nilai': 93.6,
-      'mulai': '07:30',
-      'selesai': '08:30',
-      'submit': '09:00',
-      'progres': '09:30',
-      'catatan': [
-        'Persiapkan diri dengan baik untuk PTS dengan menyusun ringkasan materi. Gunakan waktu belajar secara efektif untuk meningkatkan pemahaman.',
-      ]
-    },
-    {
-      'name': 'UTS',
-      'nilai': 82,
-      'mulai': '08:00',
-      'selesai': '09:00',
-      'submit': '09:30',
-      'progres': '10:00',
-      'catatan': [
-        'UTS kali ini memiliki fokus pada bab yang telah diajarkan selama semester ini. Pastikan untuk membaca semua materi terkait.',
-      ]
-    },
-    {
-      'name': 'UKK',
-      'nilai': 88.9,
-      'mulai': '08:30',
-      'selesai': '09:30',
-      'submit': '10:00',
-      'progres': '10:30',
-      'catatan': [
-        'UKK memerlukan pemahaman yang mendalam terhadap konsep-konsep yang telah dipelajari sepanjang tahun. Review semua catatan dan latihan.',
-      ]
-    },
-    {
-      'name': 'UAS',
-      'nilai': 78.1,
-      'mulai': '09:00',
-      'selesai': '10:00',
-      'submit': '10:30',
-      'progres': '11:00',
-      'catatan': [
-        'UAS adalah kesempatan untuk menunjukkan semua yang telah dipelajari selama tahun ajaran. Persiapkan dengan baik dan atur waktu belajar secara efektif.',
-      ]
-    },
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,8 +23,7 @@ class _HasilBelajarMatematikaState extends State<HasilBelajarMatematika> {
         ),
         title: Text(
           'Hasil Belajar Matematika',
-          style: GoogleFonts.roboto(
-              color: Colors.black, fontWeight: FontWeight.normal),
+          style: GoogleFonts.roboto(color: Colors.black),
         ),
       ),
       body: Container(
@@ -262,18 +192,13 @@ class _HasilBelajarMatematikaState extends State<HasilBelajarMatematika> {
                   ),
                 ),
                 SizedBox(height: 8),
-                ...catatan
-                    .map((note) => Padding(
-                          padding: const EdgeInsets.only(bottom: 8.0),
-                          child: Text(
-                            '• $note',
-                            style: GoogleFonts.roboto(
-                              color: Colors.black87,
-                              fontStyle: FontStyle.italic,
-                            ),
-                          ),
-                        ))
-                    .toList(),
+                Text(
+                  'Sudah Cukup...Ayo Semangat Lagi',
+                  style: GoogleFonts.roboto(
+                    color: Colors.black87,
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
               ],
             ),
           ),
