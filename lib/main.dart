@@ -16,12 +16,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
-       
+        fontFamily: 'Rage'
+
       ),
-      initialRoute: '/splash',
+      initialRoute: '/hasilbelajar',
       routes: {
         '/splash': (context) => SplashScreen(),
-        '/hasilbelajar': (context) => HasilBelajar(), // Ganti dengan nama halaman utama Anda
+        '/hasilbelajar': (context) => HasilBelajar(), 
       },
     );
   }
